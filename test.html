@@ -1,0 +1,65 @@
+<html><body>
+  <div id="mapdiv"></div>
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+  <script>
+    map = new OpenLayers.Map("mapdiv");
+
+    map.addLayer(new OpenLayers.Layer.OSM());
+
+    var oneTail = new OpenLayers.LonLat( -87.673119, 41.920974 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+
+    var paws = new OpenLayers.LonLat( -87.658689, 41.917837 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+
+    var antiCruelty = new OpenLayers.LonLat( -87.633563, 41.891414 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+
+    var felines = new OpenLayers.LonLat( -87.671651, 41.997946 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+
+    var newLeash = new OpenLayers.LonLat( -87.678731, 41.954157 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+
+    var fidoFriend = new OpenLayers.LonLat( -87.659096, 41.891649 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+    var harmonyHouse = new OpenLayers.LonLat( -87.691431, 41.934146 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+
+    var zoom=12;
+
+    var markers = new OpenLayers.Layer.Markers("Marker");
+    map.addLayer(markers);
+
+    markers.addMarker(new OpenLayers.Marker(oneTail));
+    markers.addMarker(new OpenLayers.Marker(paws));
+    markers.addMarker(new OpenLayers.Marker(antiCruelty));
+    markers.addMarker(new OpenLayers.Marker(felines));
+    markers.addMarker(new OpenLayers.Marker(newLeash));
+    markers.addMarker(new OpenLayers.Marker(fidoFriend));
+    markers.addMarker(new OpenLayers.Marker(harmonyHouse));
+
+    map.setCenter (oneTail, zoom);
+  </script>
+</body></html>

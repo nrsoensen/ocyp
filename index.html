@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- map attempt 1 -->
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.6.4/css/ol.css" type="text/css">
+  <script src="https://openlayers.org/en/v4.6.4/build/ol.js" type="text/javascript"></script>
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+  <script src="maps2.js" type="text/javascript"></script>
+
+
   <meta charset="utf-8">
   <title>Our Cause, Your Paws</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -195,7 +203,27 @@
             <div class="box wow fadeInRight" data-wow-delay="0.2s">
               <div class="icon"><i class="fa fa-paw"></i></div>
               <h4 class="title"><a href="">Cat Needs</a></h4>
-              <p class="description">Brush your cat depending on it's coat needs.</p>
+              <p class="description"><h5>How to care for your cats:</h5><ul>
+                  <li>Brush your cat depending on it's coat needs.
+                  <li>Check for skin conditions while brushing, looking our for early signs of illnesses.</li>
+                  <li>Schedule yearly vet visits.</li>
+                  <li>Get your cat spayed/neutered/"fixed".</li>
+                  <li>Get the cat used to tooth brushing.<ul>
+                    <li>Schedule professional tooth cleaning if needed.</li></ul></li>
+                  <li>Make sure your cat gets enough play time and stay entertained (toys!).</li>
+                  <li>Keep them indoors to keep them safe.</li>
+                  <li>Ensure that they have a collar and ID tags with their name and your phone number.</li>
+                  <li>Provide a healthy diet and fresh water.</li>
+                  <li>Make sure to keep their litter boxes clean.</li>
+                  <li>Teach them obediance with repeated, gentle, and consistent training, not violence.</li>
+                  <li>Give them their own private area to make them feel safe and secure.</li>
+                  <li>Provide a room with a view or a tv if windows are too out of reach.</li>
+                  <li>Go wild with perches and climbing systems.</li>
+                  <li>Try to brush them once or twice a day if you can.</li>
+                  <li>Cats clean themselves, so you do not need to clean them unless they get excessively muddy!</li>
+                  <li>Make sure to spend quality time with them!</li><br><br><br><br><br><br><br><br><br>
+                </ul>
+              </p>
             </div>
           </div>
 
@@ -203,7 +231,33 @@
             <div class="box wow fadeInRight" data-wow-delay="0.2s">
               <div class="icon"><i class="fa fa-paw"></i></div>
               <h4 class="title"><a href="">Dog Needs</a></h4>
-              <p class="description">Food and water bowls</p>
+              <p class="description"><h5>How to care for your dogs:</h5><ul>
+                  <li>For feeding:<ul>
+                      <li>Puppies eight to 12 weeks old need four meals a day.</li>
+                      <li>Feed puppies three to six months old three meals a day.</li>
+                      <li>Feed puppies six months to one year two meals a day.</li>
+                      <li>When your dog reaches his first birthday, one meal a day is usually enough.</li>
+                      <li>For some dogs, including larger canines or those prone to bloat, it's better to feed two smaller meals.</li>
+                    </ul>
+                  </li>
+                  <li>Items you'll need:<ul>
+                      <li>Food (canned and/or dry) and water bowls.</li>
+                      <li>Collar and ID tag with your phone number.</li>
+                      <li>Four to six-foot leash.</li>
+                      <li>Hard plastic carrier or foldable metal crate and a dog bed.</li>
+                      <li>Doggy shampoo, conditioner, toothpaste and toothbrush.</li>
+                      <li>Brush or comb, nail clippers, sponge, and scrub brush.</li>
+                      <li>Plastic poop bags, pooper scooper, and absorbant house-training pads.</li>
+                      <li>Variety of toys and treats.</li>
+                    </ul>
+                  </li>
+                  <li>Find a good vet, making the most of your first visit by asking about vaccinations, spaying/neutering, etc.</li>
+                  <li>Shop for quality food and fresh water to ensure a healthy diet.</li>
+                  <li>Look out for signs of illness early on.</li>
+                  <li>Teach them obediance with repeated, gentle, and consistent training, not violence.</li>
+                  <li>Be sociable witht them and make sure they have tons of play time.</li>
+                </ul>
+              </p>
             </div>
           </div>
 
@@ -224,15 +278,20 @@
         </div>
 
         <div class="owl-carousel clients-carousel">
-          <img src="img/clients/client-1.png" alt="">
-          <img src="img/clients/client-2.png" alt="">
-          <img src="img/clients/client-3.png" alt="">
+          <img src="myimg/pawschicago.png" alt="">
+          <img src="myimg/anticruelty.png" alt="">
+          <img src="myimg/lakeshore.png" alt="">
           <img src="img/clients/client-4.png" alt="">
           <img src="img/clients/client-5.png" alt="">
           <img src="img/clients/client-6.png" alt="">
           <img src="img/clients/client-7.png" alt="">
           <img src="img/clients/client-8.png" alt="">
         </div>
+
+        <!-- map attempt 1 -->
+        <div id="map" class="map"></div>
+
+        <br><br><center><a href='test.html'>Click here to view map</a></center>
 
       </div>
     </section><!-- #adoption -->
@@ -255,10 +314,10 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="img/portfolio/1.jpg" class="portfolio-popup">
-                <img src="img/portfolio/1.jpg" alt="">
+              <a href="myimg/pawschicago.png" class="portfolio-popup">
+                <img src="myimg/pawschicago.png" width=300px height=300px alt="">
                 <div class="portfolio-overlay">
-                  <div class="portfolio-info"><h2 class="wow fadeInUp">Portfolio Item 1</h2></div>
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Paws Chicago</h2></div>
                 </div>
               </a>
             </div>
@@ -266,10 +325,10 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="img/portfolio/2.jpg" class="portfolio-popup">
-                <img src="img/portfolio/2.jpg" alt="">
+              <a href="myimg/anticruelty.png" class="portfolio-popup">
+                <img src="myimg/anticruelty.png" width=300px height=300px alt="">
                 <div class="portfolio-overlay">
-                  <div class="portfolio-info"><h2 class="wow fadeInUp">Portfolio Item 2</h2></div>
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Anti-Cruelty Society</h2></div>
                 </div>
               </a>
             </div>
@@ -277,10 +336,10 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
-              <a href="img/portfolio/3.jpg" class="portfolio-popup">
-                <img src="img/portfolio/3.jpg" alt="">
+              <a href="myimg/lakeshore.png" class="portfolio-popup">
+                <img src="myimg/lakeshore.png" width=300px height=300px alt="">
                 <div class="portfolio-overlay">
-                  <div class="portfolio-info"><h2 class="wow fadeInUp">Portfolio Item 3</h2></div>
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Lake Shore Animal Shelter Inc.</h2></div>
                 </div>
               </a>
             </div>
@@ -289,14 +348,14 @@
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
               <a href="img/portfolio/4.jpg" class="portfolio-popup">
-                <img src="img/portfolio/4.jpg" alt="">
+                <img src="img/portfolio/4.jpg" width=300px height=300px alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info"><h2 class="wow fadeInUp">Portfolio Item 4</h2></div>
                 </div>
               </a>
             </div>
           </div>
-
+<!--
           <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
               <a href="img/portfolio/5.jpg" class="portfolio-popup">
@@ -340,7 +399,7 @@
               </a>
             </div>
           </div>
-
+-->
         </div>
 
       </div>
@@ -433,26 +492,30 @@
         they have made a huge difference to our natural world both on land and in the ocean.</p>
       <p>The WWF supports any animals that need protecting and their efforts stretch wide and far – from the freezing
         Antarctic to the sunny skies of Mexico or the lush bushveld of Africa. Some of the animals they help protect are:</p>
-      <p>• Tigers</p>
-      <p>• Orangutans</p>
-      <p>• Marine Turtles</p>
-      <p>• Rhinos</p>
-      <p>• Chimpanzees</p>
-      <p>• Elephants</p>
-      <p>• Leopards</p>
-      <p>• Dolphins</p>
-      <p>• Gorillas</p>
-      <p>• Whales</p>
+      <ul>
+        <li>Tigers</li>
+        <li>Orangutans</li>
+        <li>Marine Turtles</li>
+        <li>Rhinos</li>
+        <li>Chimpanzees</li>
+        <li>Elephants</li>
+        <li>Leopards</li>
+        <li>Dolphins</li>
+        <li>Gorillas</li>
+        <li>Whales</li>
+      </ul>
 
       <br><h5><a href="https://www.panthera.org/">PANTHERA</a></h5>
       <p>Panthera is a wildlife conservation organisation exclusively devoted to protecting our world’s 38 wildcat species.
         By protecting these big guys, we support the health and survival of plants, others animals, and even humans.</p>
       <p>Their main projects help to protect the most endangered wild cat species:</p>
-      <p>• Tigers</p>
-      <p>• Lions</p>
-      <p>• Jaguars</p>
-      <p>• Snow Leopards</p>
-      <p>• Pumas</p>
+      <ul>
+        <li>Tigers</li>
+        <li>Lions</li>
+        <li>Jaguars</li>
+        <li>Snow Leopards</li>
+        <li>Pumas</li>
+      </ul>
 
       <br><h5><a href="https://www.painteddog.org/about-painted-dogs">PAINTED DOG CONSERVATION</a></h5>
       <p>"These efforts span everything from our Anti-Poaching Unit team which patrol local areas daily to provide a direct
@@ -607,7 +670,7 @@
             <div class="member">
               <div class="pic"><img src="myimg/emilyCat.png" alt=""></div>
               <div class="details">
-                <h4>Cat</h4>
+                <h4>Maisy</h4>
                 <span>Emily's Cat</span>
               </div>
             </div>
@@ -669,7 +732,6 @@
         </div>
       </div>
 
-      <div id="google-map" data-latitude="40.713732" data-longitude="-74.0092704"></div>
 
       <div class="container">
         <div class="form">
@@ -722,8 +784,13 @@
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Reveal
         -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a><br>
+        <!-- map attempt 1 -->
+
+
+        This map uses the <a href="http://openlayers.org/en/latest/apidoc/">Open Layers API</a>
       </div>
+
     </div>
   </footer><!-- #footer -->
 
@@ -740,7 +807,8 @@
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="lib/magnific-popup/magnific-popup.min.js"></script>
   <script src="lib/sticky/sticky.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
+<!--  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>   -->
+
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js"></script>
 
