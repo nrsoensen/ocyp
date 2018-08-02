@@ -47,7 +47,13 @@
             map.getProjectionObject() // to Spherical Mercator Projection
           );
 
-    var zoom=12;
+    var lakeShore = new OpenLayers.LonLat( -87.838764, 42.015286 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+
+    var zoom=2;
 
     var markers = new OpenLayers.Layer.Markers("Marker");
     map.addLayer(markers);
@@ -59,7 +65,33 @@
     markers.addMarker(new OpenLayers.Marker(newLeash));
     markers.addMarker(new OpenLayers.Marker(fidoFriend));
     markers.addMarker(new OpenLayers.Marker(harmonyHouse));
+    markers.addMarker(new OpenLayers.Marker(lakeShore));
 
     map.setCenter (oneTail, zoom);
+
+    var size = new OpenLayers.Size(21,25);
+    var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
+    var icon = new OpenLayers.Icon(size, offset);
+    markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(79.8333,6.9167),icon));
+    marker = new OpenLayers.Marker(new OpenLayers.LonLat(79.8333,6.9167));
+    markers.addMarker(marker);
+
+    marker.events.register("click", marker, function(e){
+          popup = new OpenLayers.Popup.FramedCloud("chicken",
+                  new OpenLayers.LonLat(79.8333,6.9167),
+                  new OpenLayers.Size(200, 200),
+                  "I was here",
+                  null, true);
+          map.addPopup(popup);
+    });
+/*
+    popup = new OpenLayers.Popup("paws",
+                  new OpenLayers.LonLat(-87.658689, 41.917837),
+                  new OpenLayers.Size(60,60),
+                  "Paws",
+                  true);
+
+    map.addPopup(popup);
+*/
   </script>
 </body></html>
