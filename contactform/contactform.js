@@ -93,7 +93,7 @@ jQuery(document).ready(function($) {
     $.ajax({
       type: "POST",
       url: "contactform/contactform.php",
-      data: str,
+      data: "name=" + name + "&email=" + email + "&subject" + subject +"&message=" + message,
       success: function(msg) {
         // alert(msg);
         if (msg == 'OK') {

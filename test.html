@@ -1,5 +1,49 @@
 <html><body>
-  <div id="mapdiv"></div>
+  <div id="mapdiv">
+    <div id="legend">
+      <div class="row">
+        <div class="column">
+          <img src="myimg/mappawpin.png"><p>Confirmed no-kill shelters</p>
+        </div>
+        <div class="column">
+          <img src="myimg/marker.png" style="width: 53%"><p>Other animal shelters</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+  #legend{
+      position:absolute;
+      right:10px;
+      top:10px;
+      z-index:10000;
+      width:200px;
+      height:200px;
+      background:rgba(0,0,0,0);
+      border: 2px solid;
+      padding: 10px;
+  }
+
+  * {
+      box-sizing: border-box;
+  }
+
+  .row {
+      display: flex;
+  }
+
+  .column {
+      flex: 33.33%;
+      padding: 5px;
+  }
+
+  #paws_contentDIV {
+      height: 200px;
+  }
+
+  </style>
+
   <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
   <script>
     map = new OpenLayers.Map("mapdiv");
@@ -89,7 +133,7 @@
 
     popup4 = new OpenLayers.Popup("felines",
               felines,
-              new OpenLayers.Size(124,50),
+              new OpenLayers.Size(124,100),
               "<img src='myimg/felines.png' style='width:100%'>",
               true);
 
@@ -132,45 +176,49 @@
           map.addPopup(popup1);
     });
 
-    marker = new OpenLayers.Marker(paws);
-    markers.addMarker(marker);
-    marker.events.register("click", marker, function(e){
+    marker2 = new OpenLayers.Marker(paws);
+    markers.addMarker(marker2);
+    marker2.setUrl('myimg/mappawpin.png');
+    marker2.events.register("click", marker2, function(e){
           map.addPopup(popup2);
     });
 
-    marker = new OpenLayers.Marker(antiCruelty);
-    markers.addMarker(marker);
-    marker.events.register("click", marker, function(e){
+    marker3 = new OpenLayers.Marker(antiCruelty);
+    markers.addMarker(marker3);
+    marker3.setUrl('myimg/mappawpin.png');
+    marker3.events.register("click", marker3, function(e){
           map.addPopup(popup3);
     });
 
-    marker = new OpenLayers.Marker(felines);
-    markers.addMarker(marker);
-    marker.events.register("click", marker, function(e){
+    marker4 = new OpenLayers.Marker(felines);
+    markers.addMarker(marker4);
+    marker4.events.register("click", marker4, function(e){
           map.addPopup(popup4);
     });
 
-    marker = new OpenLayers.Marker(newLeash);
-    markers.addMarker(marker);
-    marker.events.register("click", marker, function(e){
+    marker5 = new OpenLayers.Marker(newLeash);
+    markers.addMarker(marker5);
+    marker5.events.register("click", marker5, function(e){
           map.addPopup(popup5);
     });
 
-    marker = new OpenLayers.Marker(fidoFriend);
-    markers.addMarker(marker);
-    marker.events.register("click", marker, function(e){
+    marker6 = new OpenLayers.Marker(fidoFriend);
+    markers.addMarker(marker6);
+    marker6.events.register("click", marker6, function(e){
           map.addPopup(popup6);
     });
 
-    marker = new OpenLayers.Marker(harmonyHouse);
-    markers.addMarker(marker);
-    marker.events.register("click", marker, function(e){
+    marker7 = new OpenLayers.Marker(harmonyHouse);
+    markers.addMarker(marker7);
+    marker7.setUrl('myimg/mappawpin.png');
+    marker7.events.register("click", marker7, function(e){
           map.addPopup(popup7);
     });
 
-    marker = new OpenLayers.Marker(lakeShore);
-    markers.addMarker(marker);
-    marker.events.register("click", marker, function(e){
+    marker8 = new OpenLayers.Marker(lakeShore);
+    markers.addMarker(marker8);
+    marker8.setUrl('myimg/mappawpin.png');
+    marker8.events.register("click", marker8, function(e){
           map.addPopup(popup8);
     });
 
