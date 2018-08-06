@@ -35,17 +35,55 @@
     var markers = new OpenLayers.Layer.Markers("Marker");
     map.addLayer(markers);
 
-    markers.addMarker(new OpenLayers.Marker(paws));
-    markers.addMarker(new OpenLayers.Marker(antiCruelty));
-    markers.addMarker(new OpenLayers.Marker(harmonyHouse));
-    markers.addMarker(new OpenLayers.Marker(lakeShore));
+    map.setCenter (harmonyHouse, zoom);
 
-    popup = new OpenLayers.Popup("paws",
-                    new OpenLayers.LonLat(-87.658689, 41.917837)
-                    new OpenLayers.Size(60,60),
-                    "Paws",
-                    true);
+    popup2 = new OpenLayers.Popup("paws",
+              paws,
+              new OpenLayers.Size(120,130),
+              "<img src='myimg/pawschicago.png' style='width:100%'>",
+              true);
 
-    map.setCenter (oneTail, zoom);
+    popup3 = new OpenLayers.Popup("antiCruelty",
+              antiCruelty,
+              new OpenLayers.Size(120,140),
+              "<img src='myimg/anticruelty.png' style='width:100%'>",
+              true);
+
+    popup7 = new OpenLayers.Popup("harmonyHouse",
+              harmonyHouse,
+              new OpenLayers.Size(120,120),
+              "<img src='myimg/harmonyHouse.png' style='width:100%'>",
+              true);
+
+    popup8 = new OpenLayers.Popup("lakeShore",
+              lakeShore,
+              new OpenLayers.Size(120,120),
+              "<img src='myimg/lakeshore.png' style='width:100%'>",
+              true);
+
+    marker = new OpenLayers.Marker(paws);
+    markers.addMarker(marker);
+    marker.events.register("click", marker, function(e){
+          map.addPopup(popup2);
+    });
+
+    marker = new OpenLayers.Marker(antiCruelty);
+    markers.addMarker(marker);
+    marker.events.register("click", marker, function(e){
+          map.addPopup(popup3);
+    });
+
+    marker = new OpenLayers.Marker(harmonyHouse);
+    markers.addMarker(marker);
+    marker.events.register("click", marker, function(e){
+          map.addPopup(popup7);
+    });
+
+    marker = new OpenLayers.Marker(lakeShore);
+    markers.addMarker(marker);
+    marker.events.register("click", marker, function(e){
+          map.addPopup(popup8);
+    });
+
   </script>
 </body></html>

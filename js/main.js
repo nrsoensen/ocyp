@@ -146,7 +146,7 @@ jQuery(document).ready(function( $ ) {
     }
   });
 
-  //Google Map
+  // Google Map
   var get_latitude = $('#google-map').data('latitude');
   var get_longitude = $('#google-map').data('longitude');
 
@@ -166,3 +166,160 @@ jQuery(document).ready(function( $ ) {
   google.maps.event.addDomListener(window, 'load', initialize_google_map);
 
 });
+
+
+
+// my map
+  map = new OpenLayers.Map("mapdiv");
+
+  map.addLayer(new OpenLayers.Layer.OSM());
+
+  var oneTail = new OpenLayers.LonLat( -87.673119, 41.920974 )
+        .transform(
+          new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+          map.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+  var paws = new OpenLayers.LonLat( -87.658689, 41.917837 )
+        .transform(
+          new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+          map.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+  var antiCruelty = new OpenLayers.LonLat( -87.633563, 41.891414 )
+        .transform(
+          new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+          map.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+  var felines = new OpenLayers.LonLat( -87.671651, 41.997946 )
+        .transform(
+          new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+          map.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+  var newLeash = new OpenLayers.LonLat( -87.678731, 41.954157 )
+        .transform(
+          new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+          map.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+  var fidoFriend = new OpenLayers.LonLat( -87.659096, 41.891649 )
+        .transform(
+          new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+          map.getProjectionObject() // to Spherical Mercator Projection
+        );
+  var harmonyHouse = new OpenLayers.LonLat( -87.691431, 41.934146 )
+        .transform(
+          new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+          map.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+  var lakeShore = new OpenLayers.LonLat( -87.838764, 42.015286 )
+        .transform(
+          new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+          map.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+  var zoom=12;
+
+  var markers = new OpenLayers.Layer.Markers("Marker");
+  map.addLayer(markers);
+
+  map.setCenter (harmonyHouse, zoom);
+
+  popup1 = new OpenLayers.Popup("oneTail",
+            oneTail,
+            new OpenLayers.Size(120,100),
+            "<img src='myimg/oneTail.png' style='width:100%'>",
+            true);
+
+  popup2 = new OpenLayers.Popup("paws",
+            paws,
+            new OpenLayers.Size(120,130),
+            "<img src='myimg/pawschicago.png' style='width:100%'>",
+            true);
+
+  popup3 = new OpenLayers.Popup("antiCruelty",
+            antiCruelty,
+            new OpenLayers.Size(120,140),
+            "<img src='myimg/anticruelty.png' style='width:100%'>",
+            true);
+
+  popup4 = new OpenLayers.Popup("felines",
+            felines,
+            new OpenLayers.Size(124,50),
+            "<img src='myimg/felines.png' style='width:100%'>",
+            true);
+
+  popup5 = new OpenLayers.Popup("newLeash",
+            newLeash,
+            new OpenLayers.Size(120,120),
+            "<img src='myimg/newLeash.png' style='width:100%'>",
+            true);
+
+  popup6 = new OpenLayers.Popup("fidoFriend",
+            fidoFriend,
+            new OpenLayers.Size(120,150),
+            "<img src='myimg/fidoFriend.png' style='width:100%'>",
+            true);
+
+  popup7 = new OpenLayers.Popup("harmonyHouse",
+            harmonyHouse,
+            new OpenLayers.Size(120,120),
+            "<img src='myimg/harmonyHouse.png' style='width:100%'>",
+            true);
+
+  popup8 = new OpenLayers.Popup("lakeShore",
+            lakeShore,
+            new OpenLayers.Size(120,120),
+            "<img src='myimg/lakeshore.png' style='width:100%'>",
+            true);
+
+  marker = new OpenLayers.Marker(oneTail);
+  markers.addMarker(marker);
+  marker.events.register("click", marker, function(e){
+        map.addPopup(popup1);
+  });
+
+  marker = new OpenLayers.Marker(paws);
+  markers.addMarker(marker);
+  marker.events.register("click", marker, function(e){
+        map.addPopup(popup2);
+  });
+
+  marker = new OpenLayers.Marker(antiCruelty);
+  markers.addMarker(marker);
+  marker.events.register("click", marker, function(e){
+        map.addPopup(popup3);
+  });
+
+  marker = new OpenLayers.Marker(felines);
+  markers.addMarker(marker);
+  marker.events.register("click", marker, function(e){
+        map.addPopup(popup4);
+  });
+
+  marker = new OpenLayers.Marker(newLeash);
+  markers.addMarker(marker);
+  marker.events.register("click", marker, function(e){
+        map.addPopup(popup5);
+  });
+
+  marker = new OpenLayers.Marker(fidoFriend);
+  markers.addMarker(marker);
+  marker.events.register("click", marker, function(e){
+        map.addPopup(popup6);
+  });
+
+  marker = new OpenLayers.Marker(harmonyHouse);
+  markers.addMarker(marker);
+  marker.events.register("click", marker, function(e){
+        map.addPopup(popup7);
+  });
+
+  marker = new OpenLayers.Marker(lakeShore);
+  markers.addMarker(marker);
+  marker.events.register("click", marker, function(e){
+        map.addPopup(popup8);
+  });

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -294,7 +293,9 @@
 
         <br><br><center><p>Click <u><a href='test.html'>here</a></u> to view map</p></center>
 
-      </div>
+        <div id="mapdiv"></div>
+
+
     </section><!-- #adoption -->
 
     <!--==========================
@@ -363,53 +364,9 @@
         </div>
       </div>
     <!--==========================
-      Small Map Section
+      Small Map Section (map attempt)
     ============================-->
-        <!-- <br><br><center><p>Click <u><a href='maps2.html'>here</a></u> to view map</p></center> -->
-        <div>
-
-            <div id="mapdiv"></div>
-
-            <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-            <script>
-              map = new OpenLayers.Map("mapdiv");
-
-              map.addLayer(new OpenLayers.Layer.OSM());
-
-              var paws = new OpenLayers.LonLat( -87.658689, 41.917837 )
-                    .transform(
-                      new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-                      map.getProjectionObject() // to Spherical Mercator Projection
-                    );
-
-              var antiCruelty = new OpenLayers.LonLat( -87.633563, 41.891414 )
-                    .transform(
-                      new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-                      map.getProjectionObject() // to Spherical Mercator Projection
-                    );
-
-              var harmonyHouse = new OpenLayers.LonLat( -87.691431, 41.934146 )
-                    .transform(
-                      new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-                      map.getProjectionObject() // to Spherical Mercator Projection
-                    );
-
-              var zoom=12;
-
-              var markers = new OpenLayers.Layer.Markers("Marker");
-              map.addLayer(markers);
-
-              markers.addMarker(new OpenLayers.Marker(paws));
-              markers.addMarker(new OpenLayers.Marker(antiCruelty));
-              markers.addMarker(new OpenLayers.Marker(harmonyHouse));
-
-              map.setCenter (oneTail, zoom);
-            </script>
-
-
-        </div>
-
-
+        <br><br><center><p>Click <u><a href='maps2.html'>here</a></u> to view map</p></center>
 
     </section><!-- #putUp -->
 
